@@ -1,7 +1,7 @@
 from ..battery import Battery
 from datetime import date, timedelta
 
-class SpinderBattery(Battery):
+class SpindlerBattery(Battery):
     def __init__(self, last_service_date : date, current_date : date) -> None:
         super().__init__()
         self.last_service_date = last_service_date

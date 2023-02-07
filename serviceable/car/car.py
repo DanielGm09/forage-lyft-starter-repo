@@ -9,7 +9,7 @@ from .engine.models.wiloughby_engine import WiloughbyEngine
 
 # Battery Imports
 from .battery.battery import Battery
-from .battery.models.spindler_battery import SpinderBattery
+from .battery.models.spindler_battery import SpindlerBattery
 from .battery.models.nubbin_battery import NubinBattery
 
 class Car(Serviceable):
@@ -23,13 +23,13 @@ class Car(Serviceable):
 
 class CarFactory():
     def create_calliope(current_date : date, last_service_date : date, current_mileage : int, last_service_mileage : int) -> Car:
-        return Car(CapuletEngine(last_service_mileage, current_mileage), SpinderBattery(last_service_date, current_date))
+        return Car(CapuletEngine(last_service_mileage, current_mileage), SpindlerBattery(last_service_date, current_date))
 
     def create_glissade(current_date : date, last_service_date : date, current_mileage : int, last_service_mileage : int) -> Car:
-        return Car(WiloughbyEngine(last_service_mileage, current_mileage), SpinderBattery(last_service_date, current_date))
+        return Car(WiloughbyEngine(last_service_mileage, current_mileage), SpindlerBattery(last_service_date, current_date))
 
     def create_palindrome(current_date : date, last_service_date : date, warning_light_on : bool) -> Car:
-        return Car(SternmanEngine(warning_light_on), SpinderBattery(last_service_date, current_date))
+        return Car(SternmanEngine(warning_light_on), SpindlerBattery(last_service_date, current_date))
 
     def create_rorschach(current_date : date, last_service_date : date, current_mileage : int, last_service_mileage : int) -> Car:
         return Car(WiloughbyEngine(last_service_mileage, current_mileage), NubinBattery(last_service_date, current_date))
