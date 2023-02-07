@@ -8,6 +8,6 @@ class SpindlerBattery(Battery):
         self.current_date = current_date
     
     def needs_service(self) -> bool:
-        years_in_days = 2*365.25
+        years_in_days = 3*365.25
         return self.last_service_date + timedelta(days=years_in_days) <= self.current_date
     
