@@ -8,7 +8,7 @@ from ..serviceable.car.battery.models.nubbin_battery import NubinBattery
 class TestSpindlerBattery(unittest.TestCase):
     def test_should_be_serviced_equal(self):
         today = datetime.utcnow().date()
-        battery = SpindlerBattery(today, today + timedelta(days=365.25*2))
+        battery = SpindlerBattery(today, today + timedelta(days=365.25*3))
         self.assertTrue(battery.needs_service())
 
     def test_should_be_serviced_greater(self):
